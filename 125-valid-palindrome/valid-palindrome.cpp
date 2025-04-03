@@ -5,16 +5,18 @@ public:
         int right=n-1;
         int left=0;
         while(left<right){
-        while(left<right && !isalnum(s[left])){
-        left++;    
+            while(left<right && !isalnum(s[left])){
+                left++;
+            }
+            while(left<right && !isalnum(s[right])){
+                right--;
+            }
+            if(tolower(s[left]) != tolower(s[right])){
+                return false;
+            }
+            right--;
+            left++;
         }
-        while(left<right && !isalnum(s[right])){
-        right--;
-        }
-        if(tolower(s[left]) != tolower(s[right])){
-            return false;}
-        right--;
-        left++;
-    }
-    return true;}
+        return true;  
+};
 };
