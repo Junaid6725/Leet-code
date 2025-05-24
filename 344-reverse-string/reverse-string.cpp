@@ -6,8 +6,8 @@ public:
       int right=n-1;
       while(left<right){
         swap(s[left],s[right]);
-        right--;
         left++;
+        right--;
       }
 
     }
